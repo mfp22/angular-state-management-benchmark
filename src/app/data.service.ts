@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { Row } from './row.model';
 
 @Injectable({ providedIn: 'root' })

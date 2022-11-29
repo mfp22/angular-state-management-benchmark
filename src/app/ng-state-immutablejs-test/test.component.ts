@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ng-state/store';
-import * as faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { fromJS } from 'immutable';
 import { DataService } from '../data.service';
 import { Row } from '../row.model';

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import * as faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { DataService } from '../data.service';
 import { RowsStore } from './rows.store';
 
