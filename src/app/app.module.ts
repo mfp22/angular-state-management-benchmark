@@ -1,7 +1,4 @@
-import {
-  BrowserModule,
-  BrowserTransferStateModule,
-} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -13,26 +10,33 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     CommonModule,
-    BrowserTransferStateModule,
     RouterModule.forRoot([
       { path: '', redirectTo: 'ng-state-immer-test', pathMatch: 'full' },
       {
         path: 'ng-state-immer-test',
-        loadChildren:
-          './ng-state-immer-test/ng-state-immer-test.module#NgStateImmerTestModule',
+        loadChildren: () =>
+          import('./ng-state-immer-test/ng-state-immer-test.module').then(
+            (m) => m.NgStateImmerTestModule
+          ),
       },
       {
         path: 'ng-state-immutablejs-test',
-        loadChildren:
-          './ng-state-immutablejs-test/ng-state-test.module#NgStateTestModule',
+        loadChildren: () =>
+          import('./ng-state-immutablejs-test/ng-state-test.module').then(
+            (m) => m.NgStateTestModule
+          ),
       },
       {
         path: 'akita-test',
-        loadChildren: './akita-test/akita-test.module#AkitaTestModule',
+        loadChildren: () =>
+          import('./akita-test/akita-test.module').then(
+            (m) => m.AkitaTestModule
+          ),
       },
       {
         path: 'ngrx-test',
-        loadChildren: './ngrx-test/ngrx-test.module#NgRxTestModule',
+        loadChildren: () =>
+          import('./ngrx-test/ngrx-test.module').then((m) => m.NgRxTestModule),
       },
     ]),
   ],
