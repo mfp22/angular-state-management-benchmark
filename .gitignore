@@ -1,0 +1,6 @@
+/.angular/cache
+debug.log
+node_modules/
+dist/
+.vscode/
+.idea/
