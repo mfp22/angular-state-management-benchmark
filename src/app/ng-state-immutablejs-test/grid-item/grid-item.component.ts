@@ -5,8 +5,8 @@ import { Map } from 'immutable';
   selector: 'app-ng-state-grid-item',
   templateUrl: './grid-item.component.html',
   styleUrls: ['./grid-item.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgStateGridItemComponent {
-    @Input() row: Map<any, any>;
+  @Input() row: Map<any, any>;
 }

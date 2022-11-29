@@ -8,16 +8,12 @@ import { StoreModule } from '@ngrx/store';
 import { rowsReducer } from './rows.reducer';
 
 @NgModule({
-    declarations: [
-        NgRxGridComponent,
-        NgRxGridItemComponent,
-        NgRxTestComponent
-    ],
-    imports: [
-        CommonModule,
-        StoreModule.forRoot({ state: rowsReducer }),
-        RouterModule.forChild([ { path: '', component: NgRxTestComponent } ]),
-    ],
-    providers: [],
+  declarations: [NgRxGridComponent, NgRxGridItemComponent, NgRxTestComponent],
+  imports: [
+    CommonModule,
+    StoreModule.forRoot({ state: rowsReducer }),
+    RouterModule.forChild([{ path: '', component: NgRxTestComponent }]),
+  ],
+  providers: [],
 })
-export class NgRxTestModule { }
+export class NgRxTestModule {}

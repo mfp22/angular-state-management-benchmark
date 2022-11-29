@@ -1,3 +1,3 @@
 export const initialState = {
-    rows: [] as any[]
+  rows: [] as any[],
 };

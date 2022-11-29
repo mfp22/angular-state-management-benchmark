@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component, ChangeDetectorRef } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { ComponentState, HasStateActions } from '@ng-state/store';
 import { GridStateActions } from './actions/grid.actions';
 
@@ -6,14 +10,14 @@ import { GridStateActions } from './actions/grid.actions';
 @Component({
   selector: 'app-ng-state-grid',
   templateUrl: './grid.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgStateGridComponent extends HasStateActions<GridStateActions> {
-    constructor(cd: ChangeDetectorRef) {
-        super(cd);
-    }
+  constructor(cd: ChangeDetectorRef) {
+    super(cd);
+  }
 
-    trackByFn(index: number, item: any) {
-        return item.id;
-    }
+  trackByFn(index: number, item: any) {
+    return item.id;
+  }
 }

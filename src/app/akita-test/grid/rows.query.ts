@@ -4,10 +4,10 @@ import { QueryEntity } from '@datorama/akita';
 import { Row } from '../../row.model';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class RowsQuery extends QueryEntity<RowsState, Row> {
-    constructor(protected store: RowsStore) {
-        super(store);
-    }
+  constructor(protected store: RowsStore) {
+    super(store);
+  }
 }

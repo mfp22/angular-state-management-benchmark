@@ -6,15 +6,15 @@ import { RouterModule } from '@angular/router';
 import { AkitaTestComponent } from './test.component';
 
 @NgModule({
-    declarations: [
-        AkitaGridComponent,
-        AkitaGridItemComponent,
-        AkitaTestComponent
-    ],
-    imports: [
-        CommonModule,
-        RouterModule.forChild([ { path: '', component: AkitaTestComponent } ]),
-    ],
-    providers: [],
+  declarations: [
+    AkitaGridComponent,
+    AkitaGridItemComponent,
+    AkitaTestComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule.forChild([{ path: '', component: AkitaTestComponent }]),
+  ],
+  providers: [],
 })
-export class AkitaTestModule { }
+export class AkitaTestModule {}

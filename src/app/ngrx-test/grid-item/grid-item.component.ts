@@ -5,8 +5,8 @@ import { Row } from '../../row.model';
   selector: 'app-ngrx-grid-item',
   templateUrl: './grid-item.component.html',
   styleUrls: ['./grid-item.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgRxGridItemComponent {
-    @Input() row: Row;
+  @Input() row: Row;
 }

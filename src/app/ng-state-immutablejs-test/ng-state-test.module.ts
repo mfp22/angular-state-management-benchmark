@@ -9,17 +9,17 @@ import { initialState } from './initial-state';
 import { ImmutableJsDataStrategyModule } from '@ng-state/immutablejs-data-strategy';
 
 @NgModule({
-    declarations: [
-        NgStateGridComponent,
-        NgStateGridItemComponent,
-        NgStateTestComponent
-    ],
-    imports: [
-        CommonModule,
-        StoreModule.provideStore(initialState, false),
-        ImmutableJsDataStrategyModule,
-        RouterModule.forChild([ { path: '', component: NgStateTestComponent } ]),
-    ],
-    providers: [],
+  declarations: [
+    NgStateGridComponent,
+    NgStateGridItemComponent,
+    NgStateTestComponent,
+  ],
+  imports: [
+    CommonModule,
+    StoreModule.provideStore(initialState, false),
+    ImmutableJsDataStrategyModule,
+    RouterModule.forChild([{ path: '', component: NgStateTestComponent }]),
+  ],
+  providers: [],
 })
-export class NgStateTestModule { }
+export class NgStateTestModule {}

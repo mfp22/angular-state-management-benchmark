@@ -9,17 +9,17 @@ import { initialState } from './initial-state';
 import { ImmerDataStrategyModule } from '@ng-state/immer-data-strategy';
 
 @NgModule({
-    declarations: [
-        NgStateGridComponent,
-        NgStateGridItemComponent,
-        NgStateTestComponent
-    ],
-    imports: [
-        CommonModule,
-        StoreModule.provideStore(initialState, false),
-        ImmerDataStrategyModule,
-        RouterModule.forChild([ { path: '', component: NgStateTestComponent } ]),
-    ],
-    providers: [],
+  declarations: [
+    NgStateGridComponent,
+    NgStateGridItemComponent,
+    NgStateTestComponent,
+  ],
+  imports: [
+    CommonModule,
+    StoreModule.provideStore(initialState, false),
+    ImmerDataStrategyModule,
+    RouterModule.forChild([{ path: '', component: NgStateTestComponent }]),
+  ],
+  providers: [],
 })
-export class NgStateImmerTestModule { }
+export class NgStateImmerTestModule {}
