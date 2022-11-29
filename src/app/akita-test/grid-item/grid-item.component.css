@@ -1,0 +1,8 @@
+.grid-item {
+    display: flex;
+}
+
+.grid-item-data {
+    width: 150px;
+    margin: 5px;
+}
