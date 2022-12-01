@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Map } from 'immutable';
+import { Row } from '../../row.model';
 
 @Component({
   selector: 'app-ng-state-grid-item',
@@ -8,5 +8,5 @@ import { Map } from 'immutable';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgStateGridItemComponent {
-  @Input() row: Map<any, any>;
+  @Input() row: Row;
 }

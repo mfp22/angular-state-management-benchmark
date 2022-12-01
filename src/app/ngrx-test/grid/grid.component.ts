@@ -1,9 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  ChangeDetectorRef,
-} from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Row } from 'src/app/row.model';
 
@@ -16,7 +12,7 @@ export class NgRxGridComponent {
   rows$: Observable<any>;
 
   constructor(private store: Store<{ rows: Row[] }>) {
-    this.rows$ = this.store.pipe(select('state', 'rows'));
+    this.rows$ = this.store.pipe(select((state) => state.rows));
   }
 
   trackByFn(index: number, item: any) {

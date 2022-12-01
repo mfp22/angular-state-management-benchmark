@@ -1,8 +1,8 @@
 import { HasStore, InjectStore } from '@ng-state/store';
-import { Map, List } from 'immutable';
+import { Row } from '../../../row.model';
 
 @InjectStore('rows')
-export class GridStateActions extends HasStore<List<Map<any, any>>> {
+export class GridStateActions extends HasStore<Array<Row>> {
   get rows() {
     return this.state;
   }

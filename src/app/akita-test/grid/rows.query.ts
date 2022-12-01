@@ -7,7 +7,7 @@ import { Row } from '../../row.model';
   providedIn: 'root',
 })
 export class RowsQuery extends QueryEntity<RowsState, Row> {
-  constructor(protected store: RowsStore) {
+  constructor(protected override store: RowsStore) {
     super(store);
   }
 }

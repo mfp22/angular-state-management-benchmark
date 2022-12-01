@@ -6,20 +6,18 @@ export const initialState = { rows: [] };
 export function rowsReducer(state = initialState, action: Action) {
   switch (action.type) {
     case ActionTypes.Add:
-      state.rows = [...state.rows];
-      state.rows.push((action as Add).payload);
-      return state;
+      return { ...state, rows: [...state.rows, (action as Add).payload] };
 
     case ActionTypes.Update:
       const payload = (action as Update).payload;
+      const rows = [...state.rows];
 
-      state.rows = [...state.rows];
-      state.rows[payload.itemIndex] = {
+      rows[payload.itemIndex] = {
         ...state.rows[payload.itemIndex],
         [payload.property]: payload.value,
       };
 
-      return state;
+      return { ...state, rows };
 
     default:
       return state;

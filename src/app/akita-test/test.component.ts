@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { faker } from '@faker-js/faker';
 import { DataService } from '../data.service';
 import { RowsStore } from './rows.store';
+import { Row } from '../row.model';
 
 @Component({
   selector: 'app-akita-test',
@@ -12,7 +13,7 @@ import { RowsStore } from './rows.store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AkitaTestComponent {
-  private rows: any[] = [];
+  private rows: Row[] = [];
 
   constructor(private rowsStore: RowsStore, private dataService: DataService) {
     this.rows = dataService.getData();

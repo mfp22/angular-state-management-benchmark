@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Row } from '../../row.model';
 
 @Component({
@@ -9,7 +8,5 @@ import { Row } from '../../row.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AkitaGridItemComponent {
-  row$: Observable<Row>;
-
   @Input() row: Row;
 }
