@@ -1,4 +1,4 @@
-import { Row } from '../row.model';
+import { Row } from '../shared/model/row.model';
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
 import { Injectable } from '@angular/core';
 

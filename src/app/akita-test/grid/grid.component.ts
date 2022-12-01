@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RowsQuery } from './rows.query';
 import { Observable } from 'rxjs';
-import { Row } from '../../row.model';
+import { Row } from '../../shared/model/row.model';
 
 @Component({
   selector: 'app-akita-grid',

@@ -1,8 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { faker } from '@faker-js/faker';
-import { DataService } from '../data.service';
+import { DataService } from '../shared/service/data.service';
 import { RowsStore } from './rows.store';
-import { Row } from '../row.model';
+import { Row } from '../shared/model/row.model';
 
 @Component({
   selector: 'app-akita-test',

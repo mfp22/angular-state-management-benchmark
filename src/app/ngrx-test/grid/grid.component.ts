@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Row } from 'src/app/row.model';
+import { Row } from 'src/app/shared/model/row.model';
 
 @Component({
   selector: 'app-ngrx-grid',

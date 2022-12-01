@@ -1,5 +1,5 @@
 <div
   *ngFor="let row of actions.rows | async; trackBy: trackByFn; let i = index"
 >
-  <app-ng-state-grid-item [row]="row"></app-ng-state-grid-item>
+  <app-grid-item [row]="row"></app-grid-item>
 </div>

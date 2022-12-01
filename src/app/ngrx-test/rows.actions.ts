@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Row } from '../row.model';
+import { Row } from '../shared/model/row.model';
 
 export enum ActionTypes {
   Add = 'Add Row',

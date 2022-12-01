@@ -1,5 +1,5 @@
 import { HasStore, InjectStore } from '@ng-state/store';
-import { Row } from '../../../row.model';
+import { Row } from '../../../shared/model/row.model';
 
 @InjectStore('rows')
 export class GridStateActions extends HasStore<Array<Row>> {

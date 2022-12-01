@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Row } from '../../row.model';
+import { Row } from '../model/row.model';
 
 @Component({
-  selector: 'app-ngrx-grid-item',
+  selector: 'app-grid-item',
   templateUrl: './grid-item.component.html',
   styleUrls: ['./grid-item.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NgRxGridItemComponent {
+export class GridItemComponent {
   @Input() row: Row;
 }

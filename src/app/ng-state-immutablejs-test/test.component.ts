@@ -2,8 +2,8 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store } from '@ng-state/store';
 import { faker } from '@faker-js/faker';
 import { fromJS } from 'immutable';
-import { DataService } from '../data.service';
-import { Row } from '../row.model';
+import { DataService } from '../shared/service/data.service';
+import { Row } from '../shared/model/row.model';
 
 @Component({
   selector: 'app-ng-state-immutablejs-test',

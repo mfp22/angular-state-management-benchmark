@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { faker } from '@faker-js/faker';
-import { Row } from './row.model';
+import { Row } from '../model/row.model';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {

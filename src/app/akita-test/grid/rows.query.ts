@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { RowsState, RowsStore } from '../rows.store';
 import { QueryEntity } from '@datorama/akita';
-import { Row } from '../../row.model';
+import { Row } from '../../shared/model/row.model';
 
 @Injectable({
   providedIn: 'root',
