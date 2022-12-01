@@ -9,6 +9,7 @@ export class DataService {
     for (let index = 0; index < this.rowsCount; index++) {
       rows.push({
         id: index,
+        item0: faker.date.future().toDateString(),
         item1: faker.date.future().toDateString(),
         item2: faker.date.future().toDateString(),
         item3: faker.date.future().toDateString(),

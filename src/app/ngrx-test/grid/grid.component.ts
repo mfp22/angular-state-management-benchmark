@@ -9,10 +9,16 @@ import { Row } from 'src/app/shared/model/row.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgRxGridComponent {
-  rows$: Observable<any>;
+  rows$: Observable<Row[]>;
 
-  constructor(private store: Store<{ rows: Row[] }>) {
-    this.rows$ = this.store.pipe(select((state) => state.rows));
+  constructor(
+    private store: Store<{
+      state: {
+        rows: Row[];
+      };
+    }>
+  ) {
+    this.rows$ = this.store.pipe(select((store) => store.state.rows));
   }
 
   trackByFn(index: number, item: any) {

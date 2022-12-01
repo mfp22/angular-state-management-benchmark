@@ -6,16 +6,15 @@ import { NgStateTestComponent } from './test.component';
 import { StoreModule } from '@ng-state/store';
 import { initialState } from './initial-state';
 import { ImmutableJsDataStrategyModule } from '@ng-state/immutablejs-data-strategy';
-import { SharedModule } from '../shared/shared.module';
+import { GridItemComponent } from './grid/grid-item/grid-item.component';
 
 @NgModule({
-  declarations: [NgStateGridComponent, NgStateTestComponent],
+  declarations: [GridItemComponent, NgStateGridComponent, NgStateTestComponent],
   imports: [
     CommonModule,
     StoreModule.provideStore(initialState, false),
     ImmutableJsDataStrategyModule,
     RouterModule.forChild([{ path: '', component: NgStateTestComponent }]),
-    SharedModule,
   ],
   providers: [],
 })
