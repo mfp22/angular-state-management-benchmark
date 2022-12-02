@@ -1,0 +1,3 @@
+<div *ngFor="let row of rows$ | async; trackBy: trackByFn">
+  <app-grid-item [row]="row"></app-grid-item>
+</div>
