@@ -2,8 +2,8 @@ import { Row, RowUpdate } from '../model/row.model';
 import { faker } from '@faker-js/faker';
 
 export const rowsCount = 200;
-export const itemsCountToUpdate = 20;
-export const iterationsCount = 1000;
+export const itemsCountToUpdate = 200;
+export const iterationsCount = 100;
 const generateDateRow = (index: number): Row => ({
   id: index,
   item0: faker.date.future().toDateString(),
@@ -19,7 +19,7 @@ const generateDateRow = (index: number): Row => ({
 });
 
 const generateUpdateRow = (): RowUpdate => ({
-  randItemIndex: Math.floor(Math.random() * rowsCount),
+  index: Math.floor(Math.random() * rowsCount),
   column: Math.floor(Math.random() * 10),
   value: faker.name.firstName(),
 });

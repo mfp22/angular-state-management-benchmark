@@ -5,7 +5,7 @@ import {
   addEntities,
   updateEntities,
 } from '@ngneat/elf-entities';
-import { Row } from '../shared/model/row.model';
+import { Row, RowUpdate } from '../shared/model/row.model';
 
 export const store = createStore({ name: 'rows' }, withEntities<Row>());
 
@@ -17,4 +17,14 @@ export function addRows(rows: Row[]) {
 
 export function updateRow(id: Row['id'], row: Partial<Row>) {
   store.update(updateEntities(id, row));
+}
+
+export function updateRows(updates: RowUpdate[]) {
+  updates.forEach((update) => {
+    const row = {
+      id: update.index,
+      [`item${update.column}`]: update.value,
+    };
+    updateRow(row.id, row);
+  });
 }

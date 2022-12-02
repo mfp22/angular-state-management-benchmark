@@ -1,6 +1,3 @@
-import { faker } from '@faker-js/faker';
-import { rowsCount } from '../utils/data.util';
-
 export type Row = {
   id: number;
   item0: string;
@@ -16,7 +13,7 @@ export type Row = {
 };
 
 export type RowUpdate = {
-  randItemIndex: number;
+  index: number;
   column: number;
   value: string;
 };

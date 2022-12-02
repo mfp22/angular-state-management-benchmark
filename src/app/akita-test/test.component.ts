@@ -1,72 +1,33 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { faker } from '@faker-js/faker';
-import { DataService } from '../shared/service/data.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RowsStore } from './rows.store';
-import { Row } from '../shared/model/row.model';
+import { Row, RowUpdate } from '../shared/model/row.model';
+import { benchAdd, benchUpdates } from '../shared/utils/benchmark.util';
 
 @Component({
   selector: 'app-akita-test',
   template: `
-    <button (click)="add()">START</button>
+    <button (click)="start()">START</button>
     <app-akita-grid></app-akita-grid>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AkitaTestComponent {
-  private rows: Row[] = [];
+  constructor(private rowsStore: RowsStore) {}
 
-  constructor(private rowsStore: RowsStore, private dataService: DataService) {
-    this.rows = dataService.getData();
+  start() {
+    benchAdd(this.add.bind(this));
+    benchUpdates(this.update.bind(this));
   }
 
-  add() {
-    // console.profile('Adding items');
-    console.time('Adding items');
-    const portions = this.dataService.rowsCount / 10;
-    for (let index = 0; index < portions; index++) {
-      const from = index * 10;
-      const to = index * 10 + 10;
-      const itemsToAdd = this.rows.slice(from, to);
-      itemsToAdd.forEach((item) => {
-        this.rowsStore.add(item);
-      });
-    }
-    // console.profileEnd('Adding items');
-
-    setTimeout(() => {
-      console.timeEnd('Adding items');
-      this.update();
-    });
+  private add(rows: Row[]) {
+    rows.forEach((row) => this.rowsStore.add(row));
   }
 
-  update() {
-    console.time('Updating items');
-    let currentItertaion = 0;
-
-    const intervalId = setInterval(() => {
-      for (
-        let index = 0;
-        index < this.dataService.itemsCountToUpdate;
-        index++
-      ) {
-        const randItemIndex = Math.floor(
-          Math.random() * this.dataService.rowsCount
-        );
-        const itemToUpdate = Math.floor(Math.random() * 10);
-        const newText = faker.name.firstName();
-        // console.log(`${randItemIndex} - item${itemToUpdate}: ${newText}`);
-
-        this.rowsStore.update(randItemIndex, {
-          [`item${itemToUpdate}`]: newText,
-        });
-      }
-
-      if (currentItertaion >= this.dataService.iterationsCount) {
-        clearInterval(intervalId);
-        console.timeEnd('Updating items');
-      }
-
-      currentItertaion++;
-    }, 100);
+  private update(updates: RowUpdate[]) {
+    updates.forEach((u) =>
+      this.rowsStore.update(u.index, {
+        [`item${u.column}`]: u.value,
+      })
+    );
   }
 }

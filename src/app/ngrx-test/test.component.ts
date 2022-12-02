@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RowUpdate } from '../shared/model/row.model';
+import { Row, RowUpdate } from '../shared/model/row.model';
 import { Store } from '@ngrx/store';
 import { Add, Update } from './rows.actions';
 import { benchAdd, benchUpdates } from '../shared/utils/benchmark.util';
@@ -20,17 +20,19 @@ export class NgRxTestComponent {
     benchUpdates(this.update.bind(this));
   }
 
-  private add(row) {
-    return this.store.dispatch(new Add(row));
+  private add(rows: Row[]) {
+    rows.forEach((row) => this.store.dispatch(new Add(row)));
   }
 
-  private update(update: RowUpdate) {
-    this.store.dispatch(
-      new Update({
-        itemIndex: update.randItemIndex,
-        property: `item${update.column}`,
-        value: update.value,
-      })
+  private update(updates: RowUpdate[]) {
+    updates.forEach((update) =>
+      this.store.dispatch(
+        new Update({
+          itemIndex: update.index,
+          property: `item${update.column}`,
+          value: update.value,
+        })
+      )
     );
   }
 }
