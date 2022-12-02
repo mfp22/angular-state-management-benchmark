@@ -1,5 +1,9 @@
 <div
-  *ngFor="let row of (actions.rows | async).toArray(); trackBy: trackByFn; let i = index"
+  *ngFor="
+    let row of (actions.rows | async).toArray();
+    trackBy: trackByFn;
+    let i = index
+  "
 >
   <app-grid-item [row]="row"></app-grid-item>
 </div>
