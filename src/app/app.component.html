@@ -4,17 +4,8 @@
   </h1>
 </div>
 <ul>
-  <li>
-    <a href="/ng-state-immer-test" routerLinkActive="link-active"
-      >ng-state immer test</a
-    >
+  <li *ngFor="let route of router.config">
+    <a [href]="route.path" routerLinkActive="link-active">{{ route.path }}</a>
   </li>
-  <li>
-    <a href="/ng-state-immutablejs-test" routerLinkActive="link-active"
-      >ng-state immutablejs test</a
-    >
-  </li>
-  <li><a href="/akita-test" routerLinkActive="link-active">akita test</a></li>
-  <li><a href="/ngrx-test" routerLinkActive="link-active">ngrx test</a></li>
 </ul>
 <router-outlet></router-outlet>
