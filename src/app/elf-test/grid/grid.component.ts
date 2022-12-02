@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { trackById } from '../../shared/utils/track-by.util';
-import { Observable } from 'rxjs';
-import { Row } from '../../shared/model/row.model';
+import { rows$ } from '../rows.repository';
 
 @Component({
   selector: 'app-grid',
@@ -9,11 +8,7 @@ import { Row } from '../../shared/model/row.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GridComponent {
-  rows$: Observable<any>;
-
-  constructor() {
-    this.rows$ = new Observable<Row>();
-  }
+  rows$ = rows$;
 
   trackByFn = trackById;
 }
