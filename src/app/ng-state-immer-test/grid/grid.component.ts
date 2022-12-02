@@ -5,6 +5,7 @@ import {
 } from '@angular/core';
 import { ComponentState, HasStateActions } from '@ng-state/store';
 import { GridStateActions } from './actions/grid.actions';
+import { trackById } from '../../shared/utils/track-by.util';
 
 @ComponentState(GridStateActions)
 @Component({
@@ -17,7 +18,5 @@ export class NgStateGridComponent extends HasStateActions<GridStateActions> {
     super(cd);
   }
 
-  trackByFn(index: number, item: any) {
-    return item.id;
-  }
+  trackByFn = trackById;
 }

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RowsQuery } from './rows.query';
 import { Observable } from 'rxjs';
 import { Row } from '../../shared/model/row.model';
+import { trackById } from '../../shared/utils/track-by.util';
 
 @Component({
   selector: 'app-akita-grid',
@@ -17,7 +18,5 @@ export class AkitaGridComponent implements OnInit {
     this.rows$ = this.todosQuery.selectAll();
   }
 
-  trackByFn(index: number, item: any) {
-    return item.id;
-  }
+  trackByFn = trackById;
 }

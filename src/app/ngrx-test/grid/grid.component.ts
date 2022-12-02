@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Row } from 'src/app/shared/model/row.model';
+import { trackById } from '../../shared/utils/track-by.util';
 
 @Component({
   selector: 'app-ngrx-grid',
@@ -21,7 +22,5 @@ export class NgRxGridComponent {
     this.rows$ = this.store.pipe(select((store) => store.state.rows));
   }
 
-  trackByFn(index: number, item: any) {
-    return item.id;
-  }
+  trackByFn = trackById;
 }
