@@ -11,7 +11,7 @@ import { trackById } from '../../shared/utils/track-by.util';
 })
 export class NgRxGridComponent {
   rows$: Observable<Row[]>;
-
+  n = 0;
   constructor(
     private store: Store<{
       state: {

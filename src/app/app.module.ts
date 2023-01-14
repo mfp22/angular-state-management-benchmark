@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { defaultStoreProvider } from '@state-adapt/angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,9 +43,16 @@ import { AppComponent } from './app.component';
             (m) => m.NgStateTestModule
           ),
       },
+      {
+        path: 'state-adapt-test',
+        loadChildren: () =>
+          import('./state-adapt-test/state-adapt-test.module').then(
+            (m) => m.StateAdaptTestModule
+          ),
+      },
     ]),
   ],
-  providers: [],
+  providers: [defaultStoreProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
